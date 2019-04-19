@@ -43,3 +43,30 @@ query = query.encode(errors='replace')
 ```
 
 ##### python3 manage.py runserver 成功
+
+### 启动步骤
+```python
+# 安装依赖
+pip install -r requirements.txt
+
+# 更改数据库配置
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'upload_test',
+        'USER': 'root',
+        'PASSWORD': 'nola123456',
+        'HOST': 'localhost',
+        'PORT': 3306,
+    }
+}
+
+# 生成迁移文件
+python3 manage.py makemigrations
+
+# 迁移
+python3 manage.py migrate
+
+# python3 manage.py createsuperuser
+admin/admin12345678
+```
